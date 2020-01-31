@@ -1,0 +1,60 @@
+<!-- Menu baar Logo -->
+
+<div class="header_bar" >
+    <div class="container">
+
+      <!-- Right side -->
+      <div>
+            <span style="height: auto; width:120px;"><a><img src="" ></a></span>
+           <span style="float:right "> <span class=" btn btn-lg glyphicon glyphicon-user"></span><a [routerLink]="['login']" >Login</a><span style="color: white">/</span><a [routerLink]="['register']">Register</a></span>
+           
+      </div>
+          
+
+
+      <!--end -->
+
+
+      <div >      
+        <ul class="nav nav-tabs" style="border-block-end:cornflowerblue;">
+          <li><a [routerLink]="['home']" >Home</a></li>
+          <li><a [routerLink]="['project']">Projects</a></li>
+          <li><a [routerLink]="['about']">About US</a></li>
+          <li><a [routerLink]="['contact']">Contact Us</a></li>
+          <li><a [routerLink]="['admin']">Admin</a></li>
+        </ul>
+
+        <span style="float:right;" ><a class="nav-item nav-link" (click)="logout()">Logout</a></span>
+
+        
+        <ul>
+          <li *ngFor="let user of users">
+            
+            {{user.username}}
+
+          </li>
+       </ul>
+
+      </div>
+
+    </div>
+</div>
+<router-outlet></router-outlet>
+
+<!-- end -->
+
+
+
+<!--   Footer  -->
+
+<div  style="background-color: cadetblue; height: 50px;">
+  <div class="container">
+  <footer>
+    <div style="text-align: center; padding-top: px; font-size: 18px;">
+        Copyright ©2019 All rights reserved 
+    </div>
+  </footer>
+</div>
+</div>
+
+<!-- end -->

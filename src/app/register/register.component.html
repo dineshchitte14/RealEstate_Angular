@@ -1,0 +1,115 @@
+<div class="container">
+
+  <h2 style="text-align: center">Registration</h2>
+  <form class="form-horizontal" [formGroup]="userform" validate>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Name</label>
+
+      <div class="col-sm-10">
+
+        <input type="text" class="form-control" formControlName="name"  />
+
+        <div class="alert alert-danger" *ngIf="userform.controls['name'].invalid && userform.controls['name'].touched">
+          <div *ngIf="userform.controls['name'].errors.required">Name is Required</div>
+          <div *ngIf="userform.controls['name'].errors.minlength">Name should be minimum of 3 letters</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">  
+
+      <label class="control-label col-sm-2">Password</label>
+
+      <div class="col-sm-10">
+        <input class="form-control" type="password" formControlName="pass"   />
+
+        <div class="alert alert-danger" *ngIf="userform.controls['pass'].invalid && userform.controls['pass'].touched">
+          <div *ngIf="userform.controls['pass'].errors.required">Password is Required</div>
+          <div *ngIf="userform.controls['pass'].errors.minlength">Password should be minimum of 8 letters</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+
+      <label class="control-label col-sm-2">Email</label>
+
+      <div class="col-sm-10">
+
+        <input class="form-control" type="text" formControlName="mail" />
+
+        <div class="alert alert-danger" *ngIf="userform.controls['mail'].invalid && userform.controls['mail'].touched">
+          <div *ngIf="userform.controls['mail'].errors.required">Email is Required</div>
+          <div *ngIf="userform.controls['mail'].errors.pattern">Email must be a valid email address</div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="form-group" style="margin-left:120px;">
+      <div >  
+        <label class="control-label ">Gender </label>
+
+        <span style="margin-left: 25px;">
+          <input type="radio" value="female" name="gender" formControlName="gender"> Female
+      
+          <input type="radio" value="male" name="gender" formControlName="gender" > Male
+        </span>
+      </div>
+    </div>  
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Please select your country</label>
+      <div class="col-sm-10">
+        <select formControlName="country">
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+
+      <label class="control-label col-sm-2">Mobile No</label>
+
+      <div class="col-sm-10">
+
+
+        <input class="form-control" type="text" formControlName="mobile" />
+
+        <div class="alert alert-danger" *ngIf="userform.controls['mobile'].invalid && userform.controls['mobile'].touched">
+          <div *ngIf="userform.controls['mobile'].errors.required">mobile is Required</div>
+          <div *ngIf="userform.controls['mobile'].errors.minlength">minlength  is 10</div>
+          <div *ngIf="userform.controls['mobile'].errors.pattern">mobile number must be a valid</div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="form-group ">
+
+      <label class="control-label col-sm-2">Address</label>
+      <div class="col-sm-10">
+        <textarea class="control-textarea form-control" placeholder="Address" formControlName="address" > </textarea>
+      </div>   
+    </div>
+
+
+    <div>
+      <input class="btn btn-primary  text-uppercase" type="submit" value="Submit" (click)="addregister()" [disabled]="userform.invalid"> <br>
+      
+      <span>Already have an Account? <a  (click)="login()">Login </a></span>
+    </div>
+    <div></div>
+
+  </form> 
+
+</div>
+<!-- <register-name-editor></register-name-editor> -->

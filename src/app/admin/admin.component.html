@@ -1,0 +1,122 @@
+{{ res | json}}
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+  <h2>Hello Admin..!!!!</h2>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2">Property Image</label>
+      <div class="col-sm-5">
+        <input type="file" #Image accept="Image/*" class="form-control" (change)="onfileselected($event.target.files)"
+          name="Image">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Property">Property Details:</label>
+      <div class="col-sm-5">
+        <textarea type="text" class="form-control" name="propertydetails" [(ngModel)]="model.propertydetails"
+          placeholder="Enter your Details"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Property">Price:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" name="price" [(ngModel)]="model.price" placeholder="Enter your Price">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="con trol-label col-sm-2" for="Property">Loction:</label>
+
+      <div class="col-sm-5">
+        <select name="loction" [(ngModel)]="model.loction">
+          <option>Select City</option>
+          <option>Pune</option>
+          <option>Mumbai</option>
+          <option>Thane</option>
+          <option>Nashik</option>
+          <option>Panvel</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" (click)="adddata()">Save</button>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+  <!-- update & delete data-->
+
+
+
+  <h2>Read data & (Delete data)</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th width="400">Image</th>
+        <th item-width="400">Property</th>
+        <th item-width="200">Price</th>
+        <th item-width="100">Loction</th>
+        <th item-width="100">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let emp of e;let i=index">
+
+        <tr *ngIf="emp">
+          <td><img src={{emp.img}} height="200px" width="200px"> </td>
+          <td>{{emp.Property}}</td>
+          <td>{{emp.Price}}</td>
+          <td>{{emp.Loction}}</td>
+          <td>
+            <a class="btn btn-success" (click)="editdata(i)">Edit</a>
+            <a class="btn btn-danger" (click)="deletedata(i)">Delete</a>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <!-- update data  -->
+  <!-- 
+ <h2>update data</h2>
+ <form class="form-horizontal">
+   <div class="form-group">
+     <label class="control-label col-sm-2" for="Image">Image:</label>
+     <div class="col-sm-10">
+       <input type="file" class="form-control"  name="Image" [(ngModel)]="" >
+     </div>
+   </div>
+   <div class="form-group">
+     <label class="control-label col-sm-2" for="propertydetail">propertydetail:</label>
+     <div class="col-sm-10"> 
+       <input type="text" class="form-control"  name="propertydetail" [(ngModel)]="" placeholder="Enter your Details">
+     </div>
+   </div>
+
+   
+   <div class="form-group">
+    <label class="control-label col-sm-2" for="price">Price:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control"  name="price" [(ngModel)]="" placeholder="Enter your Price">
+    </div>
+  </div>
+
+       <div class="form-group"> 
+     <div class="col-sm-offset-2 col-sm-10">
+       <button type="submit" class="btn btn-default" (click)="updatedata()" >Update</button>
+     </div>
+ 
+   </div>
+ </form>
+ 
+ </div>
+ -->

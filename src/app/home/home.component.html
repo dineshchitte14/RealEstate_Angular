@@ -1,0 +1,168 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <br>
+
+
+    <!-- Search menu -->
+
+
+    <div class="search">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="search_container">
+                        <div class="search_title">Find your home</div>
+                        <div class="search_form_container">
+                            <form action="#" class="search_form" id="search_form">
+                                <div
+                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+                                    <div
+                                        class="search_inputs d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+
+                                        <!-- <input type="text" class="search_input" placeholder="Property type" required="required"> -->
+                                        <select name="city" class="search_input">
+                                            <option>City</option>
+                                            <option>Pune</option>
+                                            <option>Mumbai</option>
+                                            <option>Nashik</option>
+                                            <option>Navi Mumbai</option>
+                                            <option>Ahmedabad</option>
+                                        </select>
+
+
+                                        <input type="text" class="search_input" name="search" [ngModel]="searchtext"
+                                            autocomplete="off" placeholder="Location" required="required">
+
+
+                                    </div>
+                                    <button class="search_button">submit listing</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end -->
+
+
+
+
+    <!-- Table with images -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-image" >
+                    <thead>
+                        <tr style="font-size: 18p;">
+                            <th scope="col">No</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Property Details</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Loction</th>
+                            <th scope="col">Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td class="w-25">
+                                <img src="{{img1}}" class="img-fluid img-thumbnail" alt="home">
+                            </td>
+                            <td style="text-align:left;">
+                                <h4><b>Hiranandani Fortune City</b><br>
+                                    BY HIRANANDANI COMMUNITIES<br>
+                                    Survey No. 30, Bhokharpada Village,<br> Panvel, Navi Mumbai<br>
+                                    <b>3 & 4 bhk</b>
+                                </h4>
+                            </td>
+                            <td>
+                                <b>
+                                    <h3>Price Starting</h3>
+                                    <h3>55.00 L - 1.5 Cr</h3>
+                                </b>
+                            </td>
+                            <td>Navi Mumbai</td>
+                            <td>
+                                <a class="btn btn-lg btn-primary" [routerLink]='["view"]'>View</a></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">2</th>
+                            <td class="w-25">
+                                <img src="{{img2}}" class="img-fluid img-thumbnail" alt="home2">
+                            </td>
+                            <td>
+                                <h4> <b> Konark Meadows </b><br>
+                                    BY ATLANTA LANDMARK <br>
+                                    konark Meadows,Kalyan,<br>
+                                    Mumbai<br>
+
+                                    <b> 2, 3, 4 Bhk</b>
+                                </h4>
+                            </td>
+                            <td>
+                                <b>
+                                    <h3>Price Starting</h3>
+                                    <h3>1.00 Cr - 1.5 Cr</h3>
+                                </b>
+                            </td>
+                            <td>Mumbai</td>
+                            <td>
+
+                                <a class="btn btn-lg btn-primary" [routerLink]='["view"]'>View</a>
+
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td class="w-25">
+                                <img src="{{img3}}" class="img-fluid img-thumbnail" alt="home3">
+                            </td>
+                            <td>
+
+                                <h4> <b> Pride Park Royale</b> <br>
+                                    BY PRIDE GROUP <br>
+                                    124, Military Road, Pune<br>
+
+                                    <b>3 , 4 Bhk</b>
+
+                                </h4>
+
+                            </td>
+                            <td>
+                                <b>
+                                    <h3>Price Starting</h3>
+                                    <h3>45.00 L - 90.0 L</h3>
+                                </b>
+                            </td>
+                            <td>Pune</td>
+                            <td>
+
+                                <a class="btn btn-lg btn-primary" [routerLink]='["view"]'>View</a>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <router-outlet></router-outlet>
+
+
+    <!-- end table images -->
